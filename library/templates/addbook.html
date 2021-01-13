@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Books</title>
+  <link rel="stylesheet" href="{% static 'loginpage3.css' %}">
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Add Books</h1>
+    <form method="POST" id="login-form">
+      {% csrf_token %}
+        <input type="text" name="title" id="username-field" class="login-form-field" placeholder="Title">
+        <input type="text" name="author" id="username-field" class="login-form-field" placeholder="Author">
+        <input type="text" name="summary" id="username-field" class="login-form-field" placeholder="Summary">
+        <input type="number" name="isbn" id="username-field" class="login-form-field" placeholder="ISBN">
+        
+        <select name="genre" id="login-form-select" >
+          <option selected="selected" disabled>Genre</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Magazine">Magazine</option>
+          <option value="Novel">Novel</option>
+          <option value="Study">Study</option>
+          <option value="Sports">Sports</option>
+          <option value="Biography" >Biography</option>
+          <option value="Others" >Others</option>
+        </select>
+
+        <select name="language" id="login-form-select" >
+          <option selected="selected" disabled>Language</option>
+          <option value="English">English</option>
+          <option value="Hindi">Hindi</option>
+          <option value="German">German</option>
+          <option value="French">French</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Others" >Others</option>
+        </select>
+
+        <input type="number" name="totalcopies" id="username-field" class="login-form-field" placeholder="Total Copies">
+        <input type="number" name="availablecopies" id="username-field" class="login-form-field" placeholder="Available Copies">
+        <button id="login-form-submit" type="submit">Add</button>
+    </form>
+  </main>
+</body>
+
+</html>

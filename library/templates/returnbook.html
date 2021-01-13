@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+	<!-- MAIN -->
+	
+	<div class="main">
+		<!-- MAIN CONTENT -->
+		<div class="main-content">
+			<div class="container-fluid">
+				{% if ub %}
+					<h3 class="page-title">Return Book</h3>
+					<div class="row">
+						<div class="col-md-12">
+							<!-- BASIC TABLE -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">List of Books</h3>
+								</div>
+								<div class="panel-body">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Serial #</th>
+												<th>Book Name</th>
+												<th>Author</th>
+												<th>Available Copies</th>
+												<th>Return</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for b in book %}
+											<tr>
+												<td>{{ forloop.counter }}</td>
+												<td>{{ b.title }}</td>
+												<td>{{ b.author }}</td>
+												<td>{{ b.availablecopies }}</td>
+
+												<td>
+													<form method="POST">
+														{% csrf_token %}
+														<button id="return-btn" class="btn btn-primary" onclick="returnBook()"><input type="hidden" name="return" value="{{ b.isbn }}">Return</button>
+													</form>
+												</td>
+
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				{% else %}
+					<h3>No books issued. Cannot return!</h3>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<!-- END MAIN -->
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="main">
+		<!-- MAIN CONTENT -->
+		<div class="main-content">
+			<div class="container-fluid">
+				{% if students %}
+					<h3 class="page-title">View Students</h3>
+					<div class="row">
+						<div class="col-md-12">
+							<!-- BASIC TABLE -->
+							<div class="panel">
+								
+									<div class="panel-heading">
+										<h3 class="panel-title">List of Students</h3>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>Serial #</th>
+													<th>Full Name</th>
+													<th>Email</th>
+													<th>Branch</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for b in students %}
+												<tr>
+													<td>{{ forloop.counter }}</td>
+													<td>{{ b.firstname }} {{ b.lastname }}</td>
+													<td>{{ b.email }}</td>
+													<td>{{ b.branch }}</td>
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+								
+							</div>
+
+						</div>
+					</div>
+				{% else %}
+					<h3>No students!</h3>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<!-- END MAIN -->
+{% endblock %}

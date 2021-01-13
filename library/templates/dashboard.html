@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+	<!-- MAIN -->
+	<div class="main">
+		<!-- MAIN CONTENT -->
+		<div class="main-content">
+			<div class="container-fluid">
+				
+				<div class="col-md-12">
+					<div>
+						<div class="panel">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="profile-detail">
+											<div class="profile-info">
+												<h4 class="heading">User Information</h4>
+												<ul class="list-unstyled list-justify">
+													<li>Full Name : <span style="float: right;">{{user.firstname}} {{user.lastname}}</span></li>
+													<li>Usename : <span style="float: right;">{{user.username}}</span></li>
+													<li>Email : <span style="float: right;">{{ user.email }}</span></li>
+													<li>Role : <span style="float: right;">{{ user.role }}</span></li>
+													{% if user.role != 'Staff' %}
+														<li>Branch : <span style="float: right;">{{user.branch}}</span></li>
+													{% endif %}
+												</ul>
+											</div>
+										</div>
+									</div>	
+								</div>			
+
+							</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END MAIN CONTENT -->
+	</div>
+	<!-- END MAIN -->
+{% endblock %}

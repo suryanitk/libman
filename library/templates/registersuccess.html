@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student Success</title>
+  <link rel="stylesheet" href="{% static 'loginpage3.css' %}">
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Success!</h1>
+    <p>Added student:</p>
+    
+	    <p>Name: {{ user.firstname }} {{ user.lastname }}</p>
+		  <p>Role : {{ user.role }}</p>
+		
+  	<a href="/dashboard/">Click here to go to dashboard</a>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="{% static 'loginpage3.css' %}">
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Add Student</h1>
+    <form method="POST" id="login-form">
+      {% csrf_token %}
+        <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+        <input type="text" name="firstname" id="username-field" class="login-form-field" placeholder="First Name">
+        <input type="text" name="lastname" id="username-field" class="login-form-field" placeholder="Last Name">
+        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+        <input type="email" name="email" id="username-field" class="login-form-field" placeholder="Email">
+        
+        <!-- <input type="text" name="branch" id="username-field" class="login-form-field" placeholder="Branch"> -->
+        
+        <select name="role" id="login-form-select" >
+          <option selected="selected" disabled>Role</option>
+          <!-- <option value="staff">Staff</option> -->
+          <!-- <option value="Faculty">Faculty</option> -->
+          <option value="Student">Student</option>
+        </select>
+
+
+        <!-- <input type="text" name="category" id="username-field" class="login-form-field" placeholder="Category"> -->
+        
+        <select name="branch" id="login-form-select" >
+          <option selected="selected" disabled>Branch</option>
+          <option value="CSE">CSE</option>
+          <option value="ME">ME</option>
+          <option value="EC">EC</option>
+          <option value="CE">CE</option>
+          <option value="EE">EE</option>
+          <!-- <option value="NA">Not Applicable</option> -->
+        </select>
+
+        <button id="login-form-submit" type="submit">Add</button>
+    </form>
+    	<!-- <a href="/login/">Have an account? Click here to login</a> -->
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Libman - NITK Library</title>
+    <style media="screen">
+      h2{
+        text-align:center ;
+        background-color: rgba(45, 45, 45, 0.5);
+      }
+
+      body {
+          background-image: url({% static 'assets/img/nitk.jpg' %});
+          background-size: cover;
+        }
+
+      a{
+        background-color: black;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+
+        width: auto;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #3a3a3a;
+        cursor: pointer;
+        outline: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h2 style="color:black;">Welcome to NITK Library</h2>
+    <div style="padding-top: 300px;">
+      <center>
+      <a href="login/">ENTER</a><br><br>
+    </center>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="main">
+		<!-- MAIN CONTENT -->
+		<div class="main-content">
+			<div class="container-fluid">
+				{% if ub %}
+					<h3 class="page-title">Issued Books</h3>
+					<div class="row">
+						<div class="col-md-12">
+							<!-- BASIC TABLE -->
+							<div class="panel">
+								
+									<div class="panel-heading">
+										<h3 class="panel-title">List of Books</h3>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>Serial #</th>
+													<th>Book Name</th>
+													<th>Author</th>
+													<th>Available Copies</th>
+													<th>Issue Date</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for b in book %}
+												<tr>
+													<td>{{ forloop.counter }}</td>
+													<td>{{ b.title }}</td>
+													<td>{{ b.author }}</td>
+													<td>{{ b.availablecopies }}</td>
+													{% for u in ub %}
+														{% if u.isbn == b.isbn %}
+															<td>{{ u.issueddate }}</td>		
+														{% endif %}
+													{% endfor %}
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+								
+							</div>
+
+						</div>
+					</div>
+				{% else %}
+					<h3>No books issued!</h3>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<!-- END MAIN -->
+{% endblock %}

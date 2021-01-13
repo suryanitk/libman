@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+	<!-- MAIN -->
+	
+	<div class="main">
+		<!-- MAIN CONTENT -->
+		<div class="main-content">
+			<div class="container-fluid">
+				<h3 class="page-title">View Books</h3>
+				<div class="col-md-12">
+					<div>
+						<!-- BASIC TABLE -->
+
+						{% for b in book %}
+						<div class="panel">
+							<div class="panel-body">
+								
+								<div class="row">
+									<div style="padding-top: 30px;" class="col-md-12">
+										<h2 style="color:#00AAFF;"><i>{{ b.title }}</i></h2>
+										<ul style="list-style-type:none;">
+											<li style="background-color: rgba(45,45,45,0.1)"><strong><i>Author:</i>&nbsp; &nbsp;{{ b.author }}</strong></li>
+											<li style="background-color: rgba(45,45,45,0.1)"><strong><i>ISBN:</i>&nbsp;&nbsp;{{ b.isbn }}</strong></li>
+											<li style="background-color: rgba(45,45,45,0.1)"><strong><i>Summary:</i>&nbsp; &nbsp;{{ b.summary }}</strong></li>
+											<li style="background-color: rgba(45,45,45,0.1)"><strong><i>Genre:</i>&nbsp; &nbsp;{{ b.genre }}</strong></li>
+											<li style="background-color: rgba(45,45,45,0.1)"><strong><i>Language:</i>&nbsp; &nbsp;{{ b.language }}</strong></li>
+											<li style="background-color: rgba(45,45,45,0.1)"><strong><i>Total &nbsp;Copies:</i>&nbsp;&nbsp;{{ b.totalcopies }}</strong></li>
+											<li style="background-color: rgba(45,45,45,0.1)"><strong><i>Available &nbsp;Copies:</i>&nbsp;&nbsp;{{ b.availablecopies }}</strong></li>
+
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MAIN -->
+{% endblock %}
