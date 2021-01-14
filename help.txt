@@ -3,7 +3,7 @@ Steps to run the application.
 1. Navigate to the respective folder where the source code will be present
 
 2. Clone the repository using following code
--> https://github.com/suryanitk/libman.git
+-> git clone https://github.com/suryanitk/libman.git
 
 3. Navigate to the folder /libman where the manage.py is present
 
