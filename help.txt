@@ -1,27 +1,39 @@
-Steps to run the application.
+Steps to run the application(Ubuntu)
 
 1. Navigate to the respective folder where the source code will be present
 
-2. Clone the repository using following code
--> git clone https://github.com/suryanitk/libman.git
+2. Open terminal in the above folder
+   
+3. Create a virtual environment
+   -> virtualenv env	
+   
+   If virtual environment is not installed then install using the below code:
+   	-> apt-get update
+   	-> apt-get install python-virtualenv
+   
+4. Run the virtual environment
+   -> source env/bin/activate
+   
+5. Navigate to the virtual environment folder
+   -> cd env
 
-3. Navigate to the folder /libman where the manage.py is present
+6. Clone the repository
+   -> git clone https://github.com/suryanitk/libman.git
 
-4. Run the following command to install the dependencies
--> pip install -r requirements.txt
+7. Navigate to the folder /libman where the manage.py is present
+	-> cd libman/
 
-5. Run migrations
--> python manage.py makemigrations
--> python manage.py migrate
+8. Run the following command to install the dependencies
+   -> pip install -r requirements.txt
 
-6. Create admin account
--> python manage.py createsuperuser
--> Give admin as username & password and any email
+9. Run migrations
+   -> python manage.py makemigrations
+   -> python manage.py migrate
 
-5. Run the local server
--> python manage.py runserver
+10. Run the local server
+   -> python manage.py runserver
 
-6. Open a browser and go to 127.0.0.1:8000 to run the application
+11. Open a browser and go to 127.0.0.1:8000 to run the application
 
 ------------------------------------------------------------------
 Login credentials
@@ -43,4 +55,4 @@ Admin Panel
 ------------------------------------------------------------------
 
 Go to 127.0.0.1:8000/admin to access admin panel.
-User username & password created in step 6.
+Username & Password: admin
