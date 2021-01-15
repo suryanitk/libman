@@ -29,6 +29,8 @@ def addbook(request):
 			language = form.cleaned_data.get('language')
 			totalcopies = form.cleaned_data.get('totalcopies')
 			availablecopies = form.cleaned_data.get('availablecopies')
+			if availablecopies>totalcopies:
+				availablecopies=totalcopies
 
 			#create new object of model and save the details
 			book, created = Book.objects.get_or_create(isbn = isbn)
@@ -101,6 +103,8 @@ def issuebook(request):
 			b.availablecopies=b.availablecopies-1
 			b.save()
 
+			return render(request, 'issuesuccess.html', {'book':b})
+
 	return render(request, 'issuebook.html', {'book':book, 'user':user})
 
 def issuedbook(request):
@@ -145,6 +149,8 @@ def returnbook(request):
 		UserBook.objects.get(username = username, isbn = isbn).delete()
 		b.availablecopies=b.availablecopies+1
 		b.save()
+
+		return render(request, 'returnsuccess.html', {'book':b})
 
 	return render(request, 'returnbook.html', {'book':book, 'user':user, 'ub':ub})
 

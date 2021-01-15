@@ -37,7 +37,7 @@
 												<td>
 													<form method="POST">
 														{% csrf_token %}
-														<button id="return-btn" class="btn btn-primary" onclick="returnBook()"><input type="hidden" name="return" value="{{ b.isbn }}">Return</button>
+														<button id="return-btn" class="btn btn-primary"><input type="hidden" name="return" value="{{ b.isbn }}">Return</button>
 													</form>
 												</td>
 

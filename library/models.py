@@ -31,7 +31,7 @@ class Book(models.Model):
 	availablecopies = models.IntegerField(null=True)
 
 	def __str__(self):
-		return self.isbn
+		return self.title + '-' + self.isbn
 
 class Users(models.Model):
 
@@ -59,7 +59,7 @@ class Users(models.Model):
 	role = models.CharField(choices=role_choices, max_length=10)
 
 	def __str__(self):
-		return self.username
+		return self.username + '-' + self.role
 
 class UserBook(models.Model):
 	username = models.CharField(max_length=20)
